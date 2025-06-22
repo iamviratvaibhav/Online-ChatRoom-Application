@@ -13,9 +13,6 @@ function Login() {
         formState: { errors },
     } = useForm()
 
-
-
-
     const onSubmit = (data) => {
         const userInfo = {
             email: data.email,
@@ -70,8 +67,6 @@ function Login() {
                         </label>
                         {errors.email && <span className='text-red-500'>This field is required</span>}
                         <div className="validator-hint hidden">Enter valid email address</div>
-
-
 
                         <div>
                             <label className="input validator">

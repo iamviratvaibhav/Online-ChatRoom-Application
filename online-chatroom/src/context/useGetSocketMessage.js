@@ -18,4 +18,4 @@ const useGetSocketMessage = () => {
 
 export default useGetSocketMessage;
 
-
+//keep the conversation state up-to-date with new messages received from the WebSocket connection.
