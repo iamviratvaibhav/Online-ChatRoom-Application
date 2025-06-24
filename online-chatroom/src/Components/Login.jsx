@@ -25,7 +25,6 @@ function Login() {
             .then((response) => {
                 console.log(response.data);
                 if (response.data) {
-                    // alert("Login Successfully");
                     toast.success("Login Successfully");
                     localStorage.setItem("messenger", JSON.stringify(response.data));
                     setAuthUser(response.data);

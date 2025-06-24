@@ -2,7 +2,6 @@ import React from 'react'
 import useConversation from '../../stateManagement/useConversation.js'
 import { useSocketContext } from '../../context/SocketContext.jsx';
 
-
 function User({ user }) {
   const { selectedConversation, setSelectedConversation } = useConversation();
   if (!user) return null
@@ -17,17 +16,10 @@ function User({ user }) {
     >
       <div className='flex space-x-3 px-4 py-3 hover:bg-slate-600 duration:300 cursor-pointer'>
 
-
-        {/* <div className={`avatar ${isOnline ?  "avatar-online" : "" }`}>
-        <div className="w-14 rounded-full">
-          <img src="https://avatars.githubusercontent.com/u/134628720?v=4" />
-        </div>
-      </div> */}
-
         <div className={`avatar ${isOnline ? "avatar-online" : ""}`}>
           <div className="w-14 rounded-full">
             <img
-              src={user.image || `https://robohash.org/${user._id}`} // fallback to generated
+              src={user.image || `https://robohash.org/${user._id}`} 
               alt={user.name}
             />
           </div>

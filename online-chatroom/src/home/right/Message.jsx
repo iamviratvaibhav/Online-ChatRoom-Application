@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Messages({message}) {
 
     const authUser=JSON.parse(localStorage.getItem("messenger"));

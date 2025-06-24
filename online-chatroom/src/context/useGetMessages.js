@@ -36,10 +36,3 @@ function useGetMessages() {
 }
 
 export default useGetMessages;
-
-// 1. It get the msg from selected conversation by API 
-// 2. getmsg fn make a get req to the api endpoints, sets loading true and updated
-//    the msgt state with the receiver data/
-// 3. If the data isnot an array,  it logs an error and sets msg state to an empty array
-// 4.  it returns an object
-

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useSocketContext } from "./SocketContext";
 import useConversation from "../stateManagement/useConversation.js";
-// import sound from "../assets/notification.mp3";
 const useGetSocketMessage = () => {
   const { socket } = useSocketContext();
   const { messages, setMessage } = useConversation();
@@ -18,4 +17,3 @@ const useGetSocketMessage = () => {
 
 export default useGetSocketMessage;
 
-//keep the conversation state up-to-date with new messages received from the WebSocket connection.

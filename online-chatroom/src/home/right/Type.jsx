@@ -20,29 +20,21 @@ function Type() {
     }
   };
 
-
-
-
   const handleInput = (e) => {
-  const value = e.target.value;
-  setMessage(value);
-
-  if (socket) {
-    if (value.trim() !== "") {
-      socket.emit("typing", { username: "Virat" });
-
-      // Clear previous timeout if still typing
-      clearTimeout(typingTimeout.current);
-
-      // Set stopTyping timeout
-      typingTimeout.current = setTimeout(() => {
+    const value = e.target.value;
+    setMessage(value);
+    if (socket) {
+      if (value.trim() !== "") {
+        socket.emit("typing", { username: "User" });
+        clearTimeout(typingTimeout.current);
+        typingTimeout.current = setTimeout(() => {
+          socket.emit("stopTyping");
+        }, 1000);
+      } else {
         socket.emit("stopTyping");
-      }, 1000); // if idle for 1 second, assume stop typing
-    } else {
-      socket.emit("stopTyping"); // cleared input
+      }
     }
-  }
-};
+  };
   return (
     <form onSubmit={handelSubmit}>
       <div className="flex items-center h-[11vh] space-x-2 text-center bg-gray-600">
@@ -50,7 +42,7 @@ function Type() {
           <input
             type="text"
             value={message}
-            // onChange={(e) => setMessage(e.target.value)}
+
             onChange={handleInput}
             placeholder="Type here"
             className="border-[1px] rounded-xl border-gray-700 px-3 py-3
